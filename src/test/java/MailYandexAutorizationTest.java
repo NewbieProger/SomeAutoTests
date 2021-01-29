@@ -53,6 +53,6 @@ public class MailYandexAutorizationTest {
 
     @Test(description = "Открытие страницы почтового ящика. Валидируется наличие папки 'Входящие'", dependsOnMethods = "testDeclinePhoneLinkSuggestion")
     public void testCheckEmailOpened() {
-        assertEquals(expectedTrue, $(".mail-FolderList > a[href='#inbox']").isDisplayed());
+        $(".mail-FolderList > a[href='#inbox']").shouldHave(Condition.text("Входящие"));
     }
 }
