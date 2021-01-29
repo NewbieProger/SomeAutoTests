@@ -3,7 +3,7 @@ import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.url;
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class MailYandexAutorizationTest {
 
@@ -12,8 +12,6 @@ public class MailYandexAutorizationTest {
     private static final String PHONE_LINK = "https://passport.yandex.ru/auth/phone";
     private static final String E_MAIL = "***";
     private static final String PASS = "***";
-    private static final boolean expectedTrue = true;
-    private static final boolean expectedFalse = false;
 
     @Test(description = "Открытие страницы Яндекс и переход на страницу авторизации в почту")
     public void testOpenYandexAutorization() {
@@ -21,7 +19,7 @@ public class MailYandexAutorizationTest {
         $x("//span[text()='Войти в почту']").parent().click();
         switchTo().window("Авторизация");
 
-        assertEquals(expectedTrue, url().startsWith(URL_AUTORIZATION));
+        assertTrue(url().startsWith(URL_AUTORIZATION));
     }
 
     @Test(description = "Ввод логина, переход на следующий шаг", dependsOnMethods = "testOpenYandexAutorization")
