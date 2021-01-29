@@ -9,7 +9,7 @@ public class MailYandexAutorization {
 
     private static final String URL_HOME = "https://yandex.ru/";
     private static final String URL_AUTORIZATION = "https://passport.yandex.ru/auth";
-    private static final String LINK_NUMBER = "https://passport.yandex.ru/auth/phone";
+    private static final String PHONE_LINK = "https://passport.yandex.ru/auth/phone";
     private static final String E_MAIL = "***";
     private static final String PASS = "***";
     private static final boolean expectedTrue = true;
@@ -45,7 +45,7 @@ public class MailYandexAutorization {
 
     @Test(description = "Отказ от привязки номера телефона", dependsOnMethods = "testSetPasswordClickEnter")
     public void testDeclinePhoneLinkSuggestion() {
-        if (url().startsWith(LINK_NUMBER)) {
+        if (url().startsWith(PHONE_LINK)) {
             $(".passp-title").lastChild().shouldHave(Condition.text("Привяжите номер телефона, чтобы дополнительно защитить свой аккаунт."));
             $(".passp-button[data-t='phone_skip']").click();
         }
