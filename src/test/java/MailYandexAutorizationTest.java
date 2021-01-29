@@ -5,7 +5,7 @@ import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.url;
 import static org.junit.Assert.assertEquals;
 
-public class MailYandexAutorization {
+public class MailYandexAutorizationTest {
 
     private static final String URL_HOME = "https://yandex.ru/";
     private static final String URL_AUTORIZATION = "https://passport.yandex.ru/auth";
