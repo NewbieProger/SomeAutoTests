@@ -161,4 +161,7 @@ buildNumber.properties
 *noot
 *mies
 
+# Allure
+.allure-results/
+
 # End of https://www.toptal.com/developers/gitignore/api/test,intellij+all,maven
