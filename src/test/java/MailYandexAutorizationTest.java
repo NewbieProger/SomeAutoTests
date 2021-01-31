@@ -44,12 +44,14 @@ public class MailYandexAutorizationTest {
     @Test(description = "Отказ от привязки номера телефона", dependsOnMethods = "testSetPasswordClickEnter")
     public void testDeclinePhoneLinkSuggestion() {
         if (url().startsWith(PHONE_LINK)) {
-            $(".passp-title").lastChild().shouldHave(Condition.text("Привяжите номер телефона, чтобы дополнительно защитить свой аккаунт."));
+            $(".passp-title").lastChild()
+                    .shouldHave(Condition.text("Привяжите номер телефона, чтобы дополнительно защитить свой аккаунт."));
             $(".passp-button[data-t='phone_skip']").click();
         }
     }
 
-    @Test(description = "Открытие страницы почтового ящика. Валидируется наличие папки 'Входящие'", dependsOnMethods = "testDeclinePhoneLinkSuggestion")
+    @Test(description = "Открытие страницы почтового ящика. Валидируется наличие папки 'Входящие'",
+            dependsOnMethods = "testDeclinePhoneLinkSuggestion")
     public void testCheckEmailOpened() {
         $(".mail-FolderList > a[href='#inbox']").shouldHave(Condition.text("Входящие"));
     }

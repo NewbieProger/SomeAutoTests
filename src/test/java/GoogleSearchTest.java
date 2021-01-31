@@ -20,7 +20,7 @@ public class GoogleSearchTest {
 
     @Test(description = "Количество результатов поиска", dependsOnMethods = "testOpenUrl")
     public void testSearchResultCount() {
-        $$("div#rso > .g").shouldHave(CollectionCondition.sizeGreaterThan(10));
+        $$("div#rso > .g").shouldHave(CollectionCondition.size(10));
     }
 
     @Test(description = "Поиск элемента в массиве запросов, содержащих конкретный домен", dependsOnMethods = "testSearchResultCount")
