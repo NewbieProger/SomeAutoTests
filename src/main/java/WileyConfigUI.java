@@ -13,14 +13,12 @@ public class WileyConfigUI {
     @BeforeClass
     public void setUp() {
         Configuration.startMaximized = true;
-        Configuration.headless=true;
         Configuration.baseUrl = "https://www.wiley.com/en-us";
         Configuration.savePageSource = false;
         Configuration.screenshots = false;
         Configuration.browser = "chrome";
         SelenideLogger.addListener("AllureReport", new AllureSelenide().includeSelenideSteps(true)
                 .savePageSource(false)
-                .enableLogs(LogType.PROFILER, Level.FINER)
                 .screenshots(true));
 
     }
