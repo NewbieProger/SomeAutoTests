@@ -41,12 +41,12 @@ public class WileyUITest extends WileyConfigUI {
         //На данный момент на сайте 12 элементов
     }
 
-    @Test(description = "", dependsOnMethods = "testCheckSubHeadSize")
+    @Test(description = "2", dependsOnMethods = "testCheckSubHeadSize")
     public void testAssertListSubHead() {
         $$("#Level1NavNode1 > ul > li.dropdown-item > a").shouldHave(CollectionCondition.texts(whoWeServe));
     }
 
-    @Test(dependsOnMethods = "testAssertListSubHead")
+    @Test(description = "3",dependsOnMethods = "testAssertListSubHead")
     public void testCoordinatesSearchResults() {
         $("input#js-site-search-input").click();
         $("input#js-site-search-input").setValue("Java");
@@ -62,7 +62,7 @@ public class WileyUITest extends WileyConfigUI {
         assertEquals(searchField.getY(), resultBlock.getY() - getSearchFieldHeight);
     }
 
-    @Test(description = "", dependsOnMethods = "testCoordinatesSearchResults")
+    @Test(description = "4", dependsOnMethods = "testCoordinatesSearchResults")
     public void testCheckSearchResultsSize() {
         $("span.input-group-btn > button").click();
         if ($("form.country-location-form").isDisplayed()) {
@@ -71,14 +71,14 @@ public class WileyUITest extends WileyConfigUI {
         $$("h3.product-title > a > span").shouldHave(CollectionCondition.size(10));
     }
 
-    @Test(description = "", dependsOnMethods = "testCheckSearchResultsSize")
+    @Test(description = "5", dependsOnMethods = "testCheckSearchResultsSize")
     public void testAssertSearchResultsJAVA() {
         assertTrue($$("h3.product-title > a > span").texts()
                 .stream()
                 .allMatch(Predicate.isEqual("Java")));
     }
 
-    @Test(description = "", dependsOnMethods = "testAssertSearchResultsJAVA")
+    @Test(description = "6", dependsOnMethods = "testAssertSearchResultsJAVA")
     public void testCheckPrintAndE_BOOKButtons() {
 
         if ($("form.country-location-form").isDisplayed()) {
@@ -95,7 +95,7 @@ public class WileyUITest extends WileyConfigUI {
 
     }
 
-    @Test(description = "", dependsOnMethods = "testAssertSearchResultsJAVA")
+    @Test(description = "7", dependsOnMethods = "testAssertSearchResultsJAVA")
     public void testCheckO_BOOKButtons() {
         open("https://www.wiley.com/en-us/search?pq=Java%7Crelevance");
         //TODO: Сделать
