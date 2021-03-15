@@ -30,6 +30,7 @@
                         </property>
                     </systemProperties>
                     <systemPropertyVariables>
+                        <name>AllureReportDirection</name>
                         <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
                     </systemPropertyVariables>
                 </configuration>
