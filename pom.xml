@@ -23,6 +23,10 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven-surefire-plugin.version}</version>
                 <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>testng.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                    <testFailureIgnore>true</testFailureIgnore>
                     <argLine>-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"</argLine>
                     <systemProperties>
                         <property>
@@ -60,9 +64,6 @@
                     </argLine>
                     <workingDirectory>${project.basedir}/target/</workingDirectory>
                     <reportsDirectory>${project.basedir}/target/report/</reportsDirectory>
-                    <suiteXmlFiles>
-                        <suiteXmlFile>${env.FILE}.xml</suiteXmlFile>
-                    </suiteXmlFiles>
                 </configuration>
                 <dependencies>
                     <dependency>
