@@ -92,7 +92,7 @@
     <properties>
         <maven-surefire-plugin.version>2.19.1</maven-surefire-plugin.version>
         <aspectj.version>1.8.10</aspectj.version>
-<!--        <allure-testng.version>2.13.8</allure-testng.version>-->
+        <allure-testng.version>2.13.8</allure-testng.version>
     </properties>
 
     <dependencies>
@@ -103,12 +103,12 @@
             <version>4.3.3</version>
             <scope>test</scope>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>io.qameta.allure</groupId>-->
-<!--            <artifactId>allure-testng</artifactId>-->
-<!--            <version>${allure-testng.version}</version>-->
-<!--            <scope>test</scope>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-testng</artifactId>
+            <version>${allure-testng.version}</version>
+            <scope>test</scope>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/org.testng/testng -->
         <dependency>
             <groupId>org.testng</groupId>
