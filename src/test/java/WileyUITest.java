@@ -95,7 +95,7 @@ public class WileyUITest extends WileyConfigUI {
 
     }
 
-    @Test(description = "7", dependsOnMethods = "testAssertSearchResultsJAVA")
+    @Test(description = "7", dependsOnMethods = "testCheckPrintAndE_BOOKButtons")
     public void testCheckO_BOOKButtons() {
         open("https://www.wiley.com/en-us/search?pq=Java%7Crelevance");
         //TODO: Сделать
