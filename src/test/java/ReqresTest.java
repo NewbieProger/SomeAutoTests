@@ -13,10 +13,22 @@ public class ReqresTest {
     public void testStatusAndFirstName() {
         response = given()
                 .get(urlGet)
-                .then()
+                    .then()
                 .statusCode(200)
                 .body("data.first_name", equalTo("Janet"))
                 .extract().response();
+
+    }
+
+    @Test(description = "")
+    public void testQwe() {
+        given()
+                .baseUri("https://master.is-mis.ru/")
+                .basePath("/pats/patients/8269839/edit")
+                .auth().basic("admin", "adminadmin")
+//                .header("Authorization", "Basic YWRtaW46SWs0SEwwdlQ=")
+                    .when()
+                .get().getBody().prettyPrint();
 
     }
 }
