@@ -19,16 +19,4 @@ public class ReqresTest {
                 .extract().response();
 
     }
-
-    @Test(description = "")
-    public void testQwe() {
-        given()
-                .baseUri("https://master.is-mis.ru/")
-                .basePath("/pats/patients/8269839/edit")
-                .auth().basic("admin", "adminadmin")
-//                .header("Authorization", "Basic YWRtaW46SWs0SEwwdlQ=")
-                    .when()
-                .get().getBody().prettyPrint();
-
-    }
 }
